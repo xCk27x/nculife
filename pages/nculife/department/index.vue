@@ -1,20 +1,30 @@
 <template>
   <div class="h-screen w-screen pt-16">
-    <div class="relative flex justify-around items-center h-full p-10 ">
-      <div class="page flex justify-center items-center">
-        <div class="w-4/5 h-5/6 grid grid-rows-4 gap-4">
-          <div class="box flex justify-around items-center" v-for="(books, i) in leftBooks" :key="i">
-            <div class="box-element" v-for="(book, j) in books" :key="j">
-              <p>{{ book }}</p>
+    <div class="flex justify-around items-center h-full p-10">
+      <div class="page relative flex justify-center items-center">
+        <div class="absolute h-full">
+          <img class="max-h-full w-auto" src="/nculife/department/drink_machine.png" alt="">
+        </div>
+        <div class="absolute h-full w-4/5">
+          <div class="w-auto h-full grid grid-rows-4 pt-[13%] pb-[33%]">
+            <div class="box flex justify-between items-center mx-auto" v-for="(books, i) in leftBooks" :key="i">
+              <div class="box-element" v-for="(book, j) in books" :key="j">
+                <p>{{ book }}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="page flex justify-center items-center">
-        <div class="w-4/5 h-5/6 grid grid-rows-4 gap-4">
-          <div class="box flex justify-around items-center" v-for="(books, i) in rightBooks" :key="i">
-            <div class="box-element" v-for="(book, j) in books" :key="j">
-              <p>{{ book }}</p>
+      <div class="page relative flex justify-center items-center">
+        <div class="absolute h-full">
+          <img class="max-h-full w-auto" src="/nculife/department/drink_machine.png" alt="">
+        </div>
+        <div class="absolute h-full w-4/5">
+          <div class="w-auto h-full grid grid-rows-4 pt-[13%] pb-[33%]">
+            <div class="box flex justify-between items-center mx-auto" v-for="(books, i) in rightBooks" :key="i">
+              <div class="box-element" v-for="(book, j) in books" :key="j">
+                <p>{{ book }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -32,24 +42,23 @@ const leftBooks: number[][] = [
 ];
 
 const rightBooks: number[][] = [
-  [21, 22, 23, 24],
-  [25, 26, 27, 28],
-  [29, 30, 31, 32],
-  [33, 34, 35, 36],
+  [21, 22, 23, 24, 25],
+  [26, 27, 28, 29, 30],
+  [31, 32, 33, 34, 35],
+  [36, 37, 38, 39, 40],
 ];
 </script>
 
 <style lang="scss" scoped>
 .page {
-  height: clamp(10vh, 43vw, 70vh);
-  width: 45%;
+  height: clamp(10vh, 41vw, 70vh);
+  width: 43%;
   max-width: 70vh;
-  background-color: rgb(203 213 225);
   border-radius: 3px;
 }
 
 .box {
-  background-color: white;
+  width: 68%;
 
   &-element {
     display: flex;

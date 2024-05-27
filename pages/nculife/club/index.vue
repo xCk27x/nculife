@@ -1,67 +1,51 @@
 <template>
-  <div class="h-screen w-screen pt-16">
-    <div class="relative flex justify-center items-center h-full p-10">
-      <Icon class="arrow arrow-left left-4" name="ic:baseline-arrow-circle-right" size="40"/>
-      <Icon class="arrow arrow-right right-4" name="ic:baseline-arrow-circle-right" size="40"/>
-      <div class="page page-left flex justify-center items-center">
-        <div class="w-4/5 h-5/6 flex flex-col gap-4">
-          <div class="relative flex justify-center h-1/2 w-full">
-            <Icon class="arrow arrow-left left-0" name="material-symbols:arrow-forward-ios-rounded" size="20"/>
-            <Icon class="arrow arrow-right right-0" name="material-symbols:arrow-forward-ios-rounded" size="20"/>
-            <img
-class="bg-center bg-cover w-4/5 h-auto p-1 bg-white rounded-sm"
-              src="https://img95.699pic.com/photo/50389/5994.jpg_wh860.jpg" alt="">
+  <div class=" w-screen h-screen pt-16 flex justify-center items-center">
+    <div class="px-14 h-full w-clamp-10rem-60vw-20rem flex items-center">
+      <div class="h-4/5 w-full grid grid-rows-3">
+        <div class="px-6 py-2 grid grid-cols-4">
+          <div class="h-full flex items-end">
+            <div class="bg-[RGB(217,217,217)] h-2/3 w-full flex justify-center items-center">學生會</div>
           </div>
-          <div class="w-full h-1/2 bg-white"/>
+          <div class="col-start-3 bg-[RGB(217,217,217)] flex justify-center items-center">學務處</div>
+
+        </div>
+        <div class="bg-[RGB(217,217,217)] row-start-2 row-end-4 w-full p-[5%] gap-[12%] grid grid-rows-2">
+          <div class="h-full w-full bg-white p-2 flex ">
+            <div class="w-2/3 flex gap-3">
+              <img class="max-h-full w-auto" src="/nculife/club/Rectangle 70.png" alt="">
+              <img class="max-h-full w-auto" src="/nculife/club/Rectangle 70.png" alt="">
+              <img class="max-h-full w-auto" src="/nculife/club/Rectangle 70.png" alt="">
+              <img class="max-h-full w-auto md:rotate-90 md:origin-bottom-right" src="/nculife/club/Rectangle 70.png" alt="">
+            </div>
+            <div class="w-1/3 flex justify-center items-center">
+              <p>社團</p>
+            </div>
+          </div>
+          <div class="h-full w-full bg-white p-2 flex flex-row-reverse gap-3">
+            <div class="w-2/3 flex gap-3 flex-row-reverse">
+              <img class="max-h-full w-auto" src="/nculife/club/Rectangle 70.png" alt="">
+              <img class="max-h-full w-auto" src="/nculife/club/Rectangle 70.png" alt="">
+              <img class="max-h-full w-auto" src="/nculife/club/Rectangle 70.png" alt="">
+            </div>
+            <div class="w-1/3 flex justify-center items-center">
+              <p>社群</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="page page-right"/>
     </div>
+
   </div>
 </template>
 
 <style lang="scss" scoped>
-.page {
-  height: clamp(10vh, 43vw, 70vh);
-  width: 45%;
-  max-width: 70vh;
-  background-color: rgb(203 213 225);
-
-  &-left {
-    border-right: 1px solid rgb(148 163 184);
-    border-radius: 3px 0 0 3px;
-  }
-
-  &-right {
-    border-left: 1px solid rgb(148 163 184);
-    border-radius: 0 3px 3px 0;
-  }
+.w-clamp-10rem-60vw-20rem {
+  width: clamp(5rem, 70vw, 70rem);
 }
 
-.arrow {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: rgb(148 163 184);
-  transition: 0.2s;
-
-  &-left {
-    transform: translateY(-50%) rotate(180deg);
-
-    &:hover {
-      color: rgb(94, 104, 118);
-      transform: translateY(-50%) rotate(180deg) scale(1.1);
-
-    }
-  }
-
-  &-right {
-
-    &:hover {
-      color: rgb(94, 104, 118);
-      transform: translateY(-50%) scale(1.1);
-    }
+.box {
+  &-bottom {
+    border: 10px solid rgb(148 163 184);
   }
 }
 </style>
