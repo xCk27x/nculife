@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed flex justify-between w-full px-5 py-3 gap-4 bg-[url('/nav/bg.jpg')] bg-cover bg-center shadow-md">
+  <nav class="fixed flex justify-between w-full px-5 py-3 gap-4 bg-[url('/nav/bg.jpg')] bg-cover bg-center shadow-md z-40">
     <NuxtLink to="/">
       <div class="h-10 flex justify-start items-center"><img class="max-h-full w-auto" src="/nav/text.png" alt=""></div>
     </NuxtLink>
@@ -14,15 +14,97 @@
             color="rgb(225, 104, 23)" />
         </NuxtLink>
       </div>
-      <ul class="hamburger">
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+      <button @click="navdropStore.changeNavdrop()">
+        <ul class="hamburger" :class="{'dropdown-unshow': navdropStore.navdrop}">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </button>
+    </div>
+    <!-- dropdown -->
+    <div class="dropdown fixed top-16 right-0 bottom-0 w-60 bg-[RGB(255,212,81)] px-4 py-4 overflow-auto" :class="{ 'dropdown-unshow': !navdropStore.navdrop }">
+      <NuxtLink class="w-full bg-white flex justify-center items-center py-2" v-for="content in dropdownList"
+        :key="content.name" :to="content.url">
+        <p>{{ content.name }}</p>
+      </NuxtLink>
     </div>
   </nav>
   <slot></slot>
 </template>
+
+<script setup lang="ts">
+type dropdownContent = {
+  name: string,
+  url: string,
+}
+
+const navdropStore = useNavdropStore();
+
+const dropdownList: dropdownContent[] = [
+  {
+    name: 'nculife',
+    url: '/nculife'
+  },
+  {
+    name: 'ncutube',
+    url: '/ncutube'
+  },
+  {
+    name: '新生必讀',
+    url: '/ncutube'
+  },
+  {
+    name: 'nculife',
+    url: '/nculife'
+  },
+  {
+    name: 'ncutube',
+    url: '/ncutube'
+  },
+  {
+    name: '新生必讀',
+    url: '/ncutube'
+  },
+  {
+    name: 'nculife',
+    url: '/nculife'
+  },
+  {
+    name: 'ncutube',
+    url: '/ncutube'
+  },
+  {
+    name: '新生必讀',
+    url: '/ncutube'
+  },
+  {
+    name: 'nculife',
+    url: '/nculife'
+  },
+  {
+    name: 'ncutube',
+    url: '/ncutube'
+  },
+  {
+    name: '新生必讀',
+    url: '/ncutube'
+  },
+  {
+    name: 'nculife',
+    url: '/nculife'
+  },
+  {
+    name: 'ncutube',
+    url: '/ncutube'
+  },
+  {
+    name: '新生必讀',
+    url: '/ncutube'
+  },
+
+]
+</script>
 
 <style lang="scss" scoped>
 ul.hamburger {
@@ -42,7 +124,7 @@ ul.hamburger {
     transition: 0.3s;
   }
 
-  &:hover {
+  &.dropdown-unshow {
     & li:nth-child(1) {
       transform: rotate(45deg) translate(0.85rem, 0.5rem);
     }
@@ -56,6 +138,17 @@ ul.hamburger {
     }
   }
 }
+
+.dropdown {
+  &-unshow {
+    display: none;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 
 .phone {
   display: flex;
