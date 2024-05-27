@@ -17,7 +17,7 @@ class="bg-center bg-cover max-w-4/5 h-auto p-1 bg-white rounded-sm"
           </div>
         </div>
       </div>
-      <div class="page page-right"/>
+      <div class="page page-right" />
     </div>
   </div>
 </template>
