@@ -25,10 +25,10 @@ const items = [
     image: '/nculife/transport.png'
   },
   {
-    name: 'club',
+    name: 'group',
     label: '社團',
-    url: '/nculife/club',
-    image: '/nculife/club.png'
+    url: '/nculife/group',
+    image: '/nculife/group.png'
   },
   { 
     name: 'dorm',
